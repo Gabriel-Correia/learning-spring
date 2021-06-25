@@ -1,6 +1,10 @@
 package com.gabriel.correia.learningspring;
 
+import com.gabriel.correia.learningspring.data.entity.Guest;
+import com.gabriel.correia.learningspring.data.entity.Reservation;
 import com.gabriel.correia.learningspring.data.entity.Room;
+import com.gabriel.correia.learningspring.data.repository.GuestRepository;
+import com.gabriel.correia.learningspring.data.repository.ReservationRepository;
 import com.gabriel.correia.learningspring.data.repository.RoomRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +30,30 @@ public class LearningSpringApplication {
 		@GetMapping
 		public Iterable<Room> getRooms() {
 			return this.roomRepository.findAll();
+		}
+	}
+
+	@RestController
+	@RequestMapping("/guests")
+	public class GuestController{
+		@Autowired
+		private GuestRepository guestRepository;
+
+		@GetMapping
+		public Iterable<Guest> getRooms() {
+			return this.guestRepository.findAll();
+		}
+	}
+
+	@RestController
+	@RequestMapping("/reservations")
+	public class ReservationController{
+		@Autowired
+		private ReservationRepository reservationRepository;
+
+		@GetMapping
+		public Iterable<Reservation> getRooms() {
+			return this.reservationRepository.findAll();
 		}
 	}
 
