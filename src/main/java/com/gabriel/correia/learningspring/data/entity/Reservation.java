@@ -16,14 +16,13 @@ public class Reservation {
     private long reservationId;
 
     @Column(name="ROOM_ID")
-    private String roomId;
+    private long roomId;
 
     @Column(name="GUEST_ID")
-    private String guestId;
+    private long guestId;
 
     @Column(name="RES_DATE")
     private String resDate;
-
 
     public long getReservationId() {
         return this.reservationId;
@@ -33,19 +32,19 @@ public class Reservation {
         this.reservationId = reservationId;
     }
 
-    public String getRoomId() {
+    public long getRoomId() {
         return this.roomId;
     }
 
-    public void setRoomId(String roomId) {
+    public void setRoomId(long roomId) {
         this.roomId = roomId;
     }
 
-    public String getGuestId() {
+    public long getGuestId() {
         return this.guestId;
     }
 
-    public void setGuestId(String guestId) {
+    public void setGuestId(long guestId) {
         this.guestId = guestId;
     }
 
@@ -56,5 +55,6 @@ public class Reservation {
     public void setResDate(String resDate) {
         this.resDate = resDate;
     }
+
     
 }
